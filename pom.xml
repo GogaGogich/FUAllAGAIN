@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <name>LaboratoryPlugin</name>
-    <description>Advanced laboratory system with research and crafting</description>
+    <description>Advanced laboratory system with research and crafting using Nexo ClickAction</description>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
