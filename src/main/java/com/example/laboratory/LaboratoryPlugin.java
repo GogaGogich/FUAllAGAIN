@@ -2,8 +2,7 @@ package com.example.laboratory;
 
 import com.example.laboratory.commands.RadiationCommand;
 import com.example.laboratory.commands.TeleportCommand;
-import com.example.laboratory.listeners.BlockListener;
-import com.example.laboratory.listeners.PlayerListener;
+import com.example.laboratory.listeners.NexoClickActionListener;
 import com.example.laboratory.managers.CentrifugeManager;
 import com.example.laboratory.managers.RadiationManager;
 import com.example.laboratory.managers.ResearchManager;
@@ -36,8 +35,7 @@ public class LaboratoryPlugin extends JavaPlugin {
         centrifugeManager = new CentrifugeManager(this);
         
         // Register listeners
-        getServer().getPluginManager().registerEvents(new BlockListener(this), this);
-        getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
+        getServer().getPluginManager().registerEvents(new NexoClickActionListener(this), this);
         
         // Register commands
         getCommand("teleport").setExecutor(new TeleportCommand(teleportManager));

@@ -34,6 +34,13 @@ uranium_capsule:
     - "<#green>ПКМ с ураном в левой руке - положить"
     - "<#green>Shift + ПКМ - извлечь"
   custom_model_data: 1004
+  mechanics:
+    click_actions:
+      - type: "URANIUM_CAPSULE"
+        conditions:
+          - type: "right_click"
+        actions:
+          - type: "handle_uranium_capsule"
 
 quantum_core:
   material: NETHER_STAR
@@ -50,6 +57,13 @@ geiger_counter:
     - "<#gray>Измеряет уровень радиации"
     - "<#green>ПКМ для проверки радиации"
   custom_model_data: 1006
+  mechanics:
+    click_actions:
+      - type: "GEIGER_COUNTER"
+        conditions:
+          - type: "right_click"
+        actions:
+          - type: "check_radiation"
 
 tablet:
   material: MAP
@@ -59,6 +73,13 @@ tablet:
     - "<#green>Shift + ПКМ по блоку - привязать"
     - "<#green>ПКМ - открыть интерфейс"
   custom_model_data: 1007
+  mechanics:
+    click_actions:
+      - type: "TABLET"
+        conditions:
+          - type: "right_click"
+        actions:
+          - type: "handle_tablet"
 
 chem_protection_helmet:
   material: LEATHER_HELMET

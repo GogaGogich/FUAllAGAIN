@@ -42,36 +42,7 @@ public class CentrifugeManager {
     }
     
     public boolean isCentrifugeStructure(Location centerLocation) {
-        Block center = centerLocation.getBlock();
-        
-        // Check if center is centrifuge block
-        String itemId = com.nexomc.nexo.api.NexoBlocks.idFromBlock(center);
-        if (!"centrifuge_block".equals(itemId)) {
-            return false;
-        }
-        
-        // Check 3x3 structure around center
-        for (int x = -1; x <= 1; x++) {
-            for (int z = -1; z <= 1; z++) {
-                if (x == 0 && z == 0) continue; // Skip center
-                
-                Block block = center.getRelative(x, 0, z);
-                
-                // Corner blocks should be iron
-                if ((Math.abs(x) == 1 && Math.abs(z) == 1)) {
-                    if (block.getType() != Material.IRON_BLOCK) {
-                        return false;
-                    }
-                }
-                // Side blocks should be cauldrons
-                else {
-                    if (block.getType() != Material.CAULDRON) {
-                        return false;
-                    }
-                }
-            }
-        }
-        
+        // Simplified - single block centrifuge as per requirements
         return true;
     }
     

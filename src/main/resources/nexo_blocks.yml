@@ -13,6 +13,13 @@ laboratory_terminal:
   drop:
     items:
       - laboratory_terminal
+  mechanics:
+    click_actions:
+      - type: "LABORATORY_TERMINAL"
+        conditions:
+          - type: "right_click"
+        actions:
+          - type: "open_laboratory_gui"
 
 assembler:
   material: SMITHING_TABLE
@@ -26,19 +33,32 @@ assembler:
   drop:
     items:
       - assembler
+  mechanics:
+    click_actions:
+      - type: "ASSEMBLER"
+        conditions:
+          - type: "right_click"
+        actions:
+          - type: "open_assembler_gui"
 
 centrifuge_block:
   material: BLAST_FURNACE
   displayname: "<#00ff00>Блок центрифуги"
   lore:
     - "<#gray>Производство урановой пыли"
-    - "<#yellow>Требует структуру 3x3"
     - "<#green>ПКМ - запустить центрифугу"
   custom_model_data: 2003
   hardness: 5.0
   drop:
     items:
       - centrifuge_block
+  mechanics:
+    click_actions:
+      - type: "CENTRIFUGE"
+        conditions:
+          - type: "right_click"
+        actions:
+          - type: "start_centrifuge"
 
 teleporter:
   material: END_PORTAL_FRAME
@@ -51,3 +71,10 @@ teleporter:
   drop:
     items:
       - teleporter
+  mechanics:
+    click_actions:
+      - type: "TELEPORTER"
+        conditions:
+          - type: "right_click"
+        actions:
+          - type: "open_teleporter_gui"
