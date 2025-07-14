@@ -37,6 +37,14 @@ public class LaboratoryPlugin extends JavaPlugin {
         // Register listeners
         getServer().getPluginManager().registerEvents(new ItemInteractListener(this), this);
         
+        // Register action listeners
+        getServer().getPluginManager().registerEvents(new com.example.laboratory.actions.OpenLaboratoryGuiAction(), this);
+        getServer().getPluginManager().registerEvents(new com.example.laboratory.actions.LoadLaboratoryResourcesAction(), this);
+        getServer().getPluginManager().registerEvents(new com.example.laboratory.actions.OpenAssemblerGuiAction(), this);
+        getServer().getPluginManager().registerEvents(new com.example.laboratory.actions.LoadAssemblerResourcesAction(), this);
+        getServer().getPluginManager().registerEvents(new com.example.laboratory.actions.StartCentrifugeAction(), this);
+        getServer().getPluginManager().registerEvents(new com.example.laboratory.actions.OpenTeleporterGuiAction(), this);
+        
         // Register commands
         getCommand("teleport").setExecutor(new TeleportCommand(teleportManager));
         getCommand("radiation").setExecutor(new RadiationCommand(radiationManager));

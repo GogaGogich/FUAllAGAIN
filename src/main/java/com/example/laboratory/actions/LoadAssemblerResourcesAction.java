@@ -1,18 +1,22 @@
 package com.example.laboratory.actions;
 
-import com.nexomc.nexo.api.NexoBlockInteractiveAction;
+import com.nexomc.nexo.api.events.custom_block.NexoBlockInteractEvent;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 
-public class LoadAssemblerResourcesAction extends NexoBlockInteractiveAction {
+public class LoadAssemblerResourcesAction implements Listener {
     
-    @Override
-    public void execute(Player player, Block block) {
+    @EventHandler
+    public void onBlockInteract(NexoBlockInteractEvent event) {
+        if (!"load_assembler_resources".equals(event.getBlockData().getId())) {
+            return;
+        }
+        
+        Player player = event.getPlayer();
+        Block block = event.getBlock();
+        
         player.sendMessage("§aРесурсы загружены в сборщик!");
-    }
-    
-    @Override
-    public String getType() {
-        return "load_assembler_resources";
     }
 }

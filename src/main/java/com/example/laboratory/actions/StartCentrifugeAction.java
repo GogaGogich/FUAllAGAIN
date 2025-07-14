@@ -1,14 +1,23 @@
 package com.example.laboratory.actions;
 
 import com.example.laboratory.LaboratoryPlugin;
-import com.nexomc.nexo.api.NexoBlockInteractiveAction;
+import com.nexomc.nexo.api.events.custom_block.NexoBlockInteractEvent;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 
-public class StartCentrifugeAction extends NexoBlockInteractiveAction {
+public class StartCentrifugeAction implements Listener {
     
-    @Override
-    public void execute(Player player, Block block) {
+    @EventHandler
+    public void onBlockInteract(NexoBlockInteractEvent event) {
+        if (!"centrifuge_block".equals(event.getBlockData().getId())) {
+            return;
+        }
+        
+        Player player = event.getPlayer();
+        Block block = event.getBlock();
+        
         LaboratoryPlugin plugin = LaboratoryPlugin.getInstance();
         
         if (plugin.getCentrifugeManager().startCentrifuge(block.getLocation())) {
@@ -19,10 +28,5 @@ public class StartCentrifugeAction extends NexoBlockInteractiveAction {
         } else {
             player.sendMessage("§cОшибка запуска центрифуги!");
         }
-    }
-    
-    @Override
-    public String getType() {
-        return "start_centrifuge";
     }
 }

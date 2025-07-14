@@ -1,6 +1,0 @@
-com.example.laboratory.actions.OpenLaboratoryGuiAction
-com.example.laboratory.actions.LoadLaboratoryResourcesAction
-com.example.laboratory.actions.OpenAssemblerGuiAction
-com.example.laboratory.actions.LoadAssemblerResourcesAction
-com.example.laboratory.actions.StartCentrifugeAction
-com.example.laboratory.actions.OpenTeleporterGuiAction
