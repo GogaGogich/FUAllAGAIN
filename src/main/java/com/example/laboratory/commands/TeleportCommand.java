@@ -24,7 +24,7 @@ public class TeleportCommand implements CommandExecutor {
         Player player = (Player) sender;
         
         if (args.length != 1) {
-            player.sendMessage("§cИспользование: /teleport <ID>");
+            player.sendMessage("§cИспользование: /t <ID>");
             return true;
         }
         

@@ -7,9 +7,9 @@ author: YourName
 description: Advanced laboratory system with research and crafting
 
 commands:
-  teleport:
+  t:
     description: Teleport to a specific teleporter
-    usage: /teleport <id>
+    usage: /t <id>
   radiation:
     description: Check radiation level
     usage: /radiation
