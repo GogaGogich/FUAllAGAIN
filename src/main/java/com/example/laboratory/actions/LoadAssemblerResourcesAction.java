@@ -1,7 +1,7 @@
 package com.example.laboratory.actions;
 
 import com.nexomc.nexo.api.events.custom_block.NexoBlockInteractEvent;
-import org.bukkit.block.Block;
+import com.nexomc.nexo.mechanics.custom_block.CustomBlockMechanic;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -10,13 +10,14 @@ public class LoadAssemblerResourcesAction implements Listener {
     
     @EventHandler
     public void onBlockInteract(NexoBlockInteractEvent event) {
-        if (!"load_assembler_resources".equals(event.getBlockData().getId())) {
+        CustomBlockMechanic mechanic = event.getMechanic();
+        String id = mechanic.getName();
+        
+        if (!id.equalsIgnoreCase("assembler")) {
             return;
         }
         
         Player player = event.getPlayer();
-        Block block = event.getBlock();
-        
         player.sendMessage("§aРесурсы загружены в сборщик!");
     }
 }
