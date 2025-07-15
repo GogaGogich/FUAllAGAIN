@@ -11,9 +11,9 @@ public class LoadLaboratoryResourcesAction implements Listener {
     @EventHandler
     public void onBlockInteract(NexoBlockInteractEvent event) {
         CustomBlockMechanic mechanic = event.getMechanic();
-        String id = mechanic.getName();
+        String id = mechanic.getModel().asString();
         
-        if (!id.equalsIgnoreCase("laboratory_terminal")) {
+        if (!id.contains("laboratory_terminal")) {
             return;
         }
         

@@ -11,9 +11,9 @@ public class LoadAssemblerResourcesAction implements Listener {
     @EventHandler
     public void onBlockInteract(NexoBlockInteractEvent event) {
         CustomBlockMechanic mechanic = event.getMechanic();
-        String id = mechanic.getName();
+        String id = mechanic.getModel().asString();
         
-        if (!id.equalsIgnoreCase("assembler")) {
+        if (!id.contains("assembler")) {
             return;
         }
         
